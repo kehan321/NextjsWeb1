@@ -84,7 +84,7 @@ const Home = () => {
     },
     {
       imageUrl: 'https://themes.webdevia.com/petroleum-gas/wp-content/uploads/2014/08/stock-photo-oil-pump-jacks-at-sunset-sky-background-toned-316001336.jpg',
-      title: 'Aenean nonummy hendrerit ',
+      title: 'Aenean nonummy hendrerit  sdcvsd gsdf',
       subtitle: 'Sed odio orci, fringilla nec dolor et, euismod auctor mauris. Curabitur semper dui diam, nec accumsan mauris consequat sed.',
     },
   ];
