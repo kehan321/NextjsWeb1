@@ -14,6 +14,7 @@ const Footer = () => {
             <li>
               <Link href="/privacy" className="transition duration-300 hover:text-blue-400">
                 Privacy Policy
+
               </Link>
             </li>
             <li>
@@ -29,6 +30,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex justify-center space-x-6 mb-4">
+            
           <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faFacebook} className="w-6 h-6 transition duration-300 hover:text-blue-400" />
           </Link>

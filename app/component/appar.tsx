@@ -29,7 +29,7 @@ const AppBar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full p-4 transition-all duration-300 ${scrolled ? 'bg-white bg-opacity-90 text-black' : 'bg-transparent text-white'}`} style={{ zIndex: 1000 }}>
+    <nav className={`fixed top-0 left-0 w-full p-4 transition-all duration-300 ${scrolled ? 'bg-white bg-opacity-50 text-black' : 'bg-transparent text-white'}`} style={{ zIndex: 1000 }}>
       <div className="flex items-center justify-between">
         <img 
           src="https://up.yimg.com/ib/th?id=OIP.HxV79tFMPfBAIo0BBF-sOgHaEy&pid=Api&rs=1&c=1&qlt=95&w=177&h=114" 
@@ -40,7 +40,7 @@ const AppBar: React.FC = () => {
           <Link href="/" className={`${scrolled ? 'text-black' : 'text-white'} transition-colors`}>Home</Link>
           <Link href="/about" className={`${scrolled ? 'text-black' : 'text-white'} transition-colors`}>About</Link>
           <Link href="/contact" className={`${scrolled ? 'text-black' : 'text-white'} transition-colors`}>Contact</Link>
-          {/* <Link href="/login" className={`${scrolled ? 'text-black' : 'text-white'} transition-colors`}>Login</Link> */}
+          <Link href="/login" className={`${scrolled ? 'text-black' : 'text-white'} transition-colors`}>Login</Link>
         </div>
         <button className="md:hidden" onClick={toggleMenu}>
           <i className={`fas fa-${menuOpen ? 'times' : 'bars'} text-2xl`}></i>
