@@ -92,30 +92,30 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       <AppBar />
-      <div
-        className="relative h-64 sm:h-80 lg:h-96 bg-cover bg-center"
-        style={{ backgroundImage: 'url(https://tse4.mm.bing.net/th?id=OIP.vDjfoBkKZ28exEwQOsjPcAHaE8&pid=Api&P=0&h=220)' }}
-      >
-        <main className="flex items-center justify-center h-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-6xl mx-auto gap-4">
-            <div className="flex flex-col items-start justify-center mb-20 p-8 bg-opacity-30 rounded-lg">
-              <h1 className="mb-4 font-semibold text-white text-3xl sm:text-5xl text-start">
-                Overcoming technology challenges: making the most of resources
-              </h1>
-              <div className="flex space-x-4">
-                <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition">
-                  Read More
-                </button>
-                <button className="px-4 py-2 text-white rounded border-2 border-blue-500 hover:bg-blue-500 transition">
-                  Learn More
-                </button>
-              </div>
-            </div>
-            <div className="flex items-center justify-center bg-transparent"></div>
-          </div>
-        </main>
-        <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-50 text-white text-center"></div>
+<div
+  className="relative h-[800px] sm:h-112 lg:h-128 bg-cover bg-center"
+  style={{ backgroundImage: 'url(https://tse4.mm.bing.net/th?id=OIP.vDjfoBkKZ28exEwQOsjPcAHaE8&pid=Api&P=0&h=220)' }}
+>
+  <main className="flex items-center justify-center h-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-6xl mx-auto gap-4">
+      <div className="flex flex-col items-start justify-center mb-20 p-8 bg-opacity-30 rounded-lg">
+        <h1 className="mb-4 font-semibold text-white text-3xl sm:text-5xl text-start">
+          Overcoming technology challenges: making the most of resources
+        </h1>
+        <div className="flex space-x-4">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition">
+            Read More
+          </button>
+          <button className="px-4 py-2 text-white rounded border-2 border-blue-500 hover:bg-blue-500 transition">
+            Learn More
+          </button>
+        </div>
       </div>
+      <div className="flex items-center justify-center bg-transparent"></div>
+    </div>
+  </main>
+  <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-50 text-white text-center"></div>
+</div>
 
       {/* Cards Section */}
       <div className=" relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto mt-[-5rem]">
