@@ -92,11 +92,14 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       <AppBar />
-<div
+      <div
   className="relative h-[800px] sm:h-112 lg:h-128 bg-cover bg-center"
   style={{ backgroundImage: 'url(https://tse4.mm.bing.net/th?id=OIP.vDjfoBkKZ28exEwQOsjPcAHaE8&pid=Api&P=0&h=220)' }}
 >
-  <main className="flex items-center justify-center h-full">
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+
+  <main className="flex items-center justify-center h-full relative">
     <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-6xl mx-auto gap-4">
       <div className="flex flex-col items-start justify-center mb-20 p-8 bg-opacity-30 rounded-lg">
         <h1 className="mb-4 font-semibold text-white text-3xl sm:text-5xl text-start">
