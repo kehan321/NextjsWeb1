@@ -19,7 +19,7 @@ const Contact = () => {
     setSuccess('');
 
     // Insert data into Supabase
-    const { data, error: insertError } = await supabase
+    const {error: insertError } = await supabase
       .from('feedback') // replace with your table name
       .insert([{ name, email, message }]);
 
