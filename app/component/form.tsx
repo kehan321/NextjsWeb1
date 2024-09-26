@@ -20,7 +20,7 @@ const SubscriptionSection = () => {
     }
 
     // Insert data into Supabase
-    const { data, error: insertError } = await supabase
+    const { error: insertError } = await supabase
       .from('subscriptions') // your table name
       .insert([{ name, email }]);
 
