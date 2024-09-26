@@ -49,7 +49,7 @@ const AppBar: React.FC = () => {
           <Link href="/blog" className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}>Blog</Link>
           <Link href="/contact" className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}>Contact</Link>
         </div>
-        <button className="md:hidden text-2xl focus:outline-none" onClick={toggleMenu} aria-expanded={menuOpen} aria-label="Toggle menu">
+        <button className="md:hidden text-2xl text-gray-400 focus:outline-none" onClick={toggleMenu} aria-expanded={menuOpen} aria-label="Toggle menu">
           <i className={`fas fa-${menuOpen ? 'times' : 'bars'}`}></i>
         </button>
       </div>

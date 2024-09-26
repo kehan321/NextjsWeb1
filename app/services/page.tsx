@@ -131,7 +131,7 @@ const Services = () => {
   return (
     <div className="container mx-auto p-6">
       <AppBar/>
-      <h1 className="text-4xl font-bold text-center mb-6">Our Services</h1>
+      <h1 className="text-4xl font-bold text-center pt-20 mb-6">Our Services</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {servicesData.map((service, index) => (
           <div key={index} className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 flex flex-col items-center">

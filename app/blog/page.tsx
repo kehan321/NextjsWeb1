@@ -75,7 +75,7 @@ const Blog = () => {
   return (
     <div className="container mx-auto p-6">
       <AppBar/>
-      <h1 className="text-4xl font-bold text-center mb-6">Our Blog</h1>
+      <h1 className="text-4xl font-bold text-center   pt-20 mb-6">Our Blog</h1>
       <div className="space-y-6">
         {posts.map((post, index) => (
           <div key={index} className="bg-white shadow-lg rounded-lg p-4">

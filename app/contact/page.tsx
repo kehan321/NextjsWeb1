@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <div className="max-w-6xl mx-auto font-serif p-6">
       <AppBar />
-      <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Get in Touch</h1>
+      <h1 className="text-4xl pt-20  font-bold text-center   md:mt-0 mb-8 text-gray-800">Get in Touch</h1>
 
       {/* Feedback Form */}
       <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
