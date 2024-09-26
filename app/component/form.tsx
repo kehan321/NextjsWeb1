@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { supabase } from './supabaseClient';
 
-
-
 const SubscriptionSection = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,26 +8,25 @@ const SubscriptionSection = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true); // Start loading
+    setLoading(true);
 
     // Simple validation
     if (!name || !email) {
       alert('Please fill in both fields');
-      setLoading(false); // Stop loading
+      setLoading(false);
       return;
     }
 
     // Insert data into Supabase
     const { error: insertError } = await supabase
-      .from('subscriptions') // your table name
+      .from('subscriptions')
       .insert([{ name, email }]);
 
-    setLoading(false); // Stop loading
+    setLoading(false);
 
     if (insertError) {
       alert('Error adding subscription: ' + insertError.message);
     } else {
-      // Reset form and show success alert
       setName('');
       setEmail('');
       alert('Subscription successful!');
@@ -46,20 +43,20 @@ const SubscriptionSection = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row py-10 items-center justify-center space-x-0 sm:space-x-4">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row px-5 py-10 items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <input
           type="text"
           placeholder="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="border rounded-md p-3 mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
+          className="border rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
         />
         <input
           type="email"
           placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border rounded-md p-3 mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
+          className="border rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
         />
         <button 
           type="submit" 

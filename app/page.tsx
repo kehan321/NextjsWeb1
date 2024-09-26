@@ -575,7 +575,7 @@ const Home = () => {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
+    const timer = setTimeout(() => setLoading(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -584,7 +584,7 @@ const Home = () => {
       gsap.from(cardRef.current, {
         opacity: 0,
         y: 20,
-        duration: 2,
+        duration: 8,
         ease: "power2.out",
       });
     }

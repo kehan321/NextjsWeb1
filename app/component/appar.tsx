@@ -1,11 +1,12 @@
 "use client";
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const AppBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 50);
@@ -19,6 +20,25 @@ const AppBar: React.FC = () => {
     setMenuOpen(false);
   };
 
+  // Close menu on body click outside the menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -29,7 +49,7 @@ const AppBar: React.FC = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full p-3 transition-all duration-300 ${
-        scrolled ? 'bg-white bg-opacity-90 text-black shadow-lg' : 'bg-transparent text-white'
+        scrolled ? 'bg-white bg-opacity-60 text-black shadow-lg' : 'bg-transparent text-white'
       }`}
       style={{ zIndex: 1000 }}
     >
@@ -43,26 +63,40 @@ const AppBar: React.FC = () => {
         </Link>
 
         <div className="hidden md:flex space-x-6 font-poppins font-bold">
-          <Link href="/about" className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}>About</Link>
-          <Link href="/services" className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}>Services</Link>
-          <Link href="/portfolio" className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}>Portfolio</Link>
-          <Link href="/blog" className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}>Blog</Link>
-          <Link href="/contact" className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}>Contact</Link>
+          {["about", "services", "portfolio", "blog", "contact"].map((item) => (
+            <Link
+              key={item}
+              href={`/${item}`}
+              className={`transition-colors duration-200 ${scrolled ? 'text-black hover:text-blue-800 hover:underline' : 'text-white hover:text-blue-800 hover:underline'}`}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </Link>
+          ))}
         </div>
-        <button className="md:hidden text-2xl text-gray-400 focus:outline-none" onClick={toggleMenu} aria-expanded={menuOpen} aria-label="Toggle menu">
+        <button
+          className="md:hidden text-2xl text-gray-400 focus:outline-none"
+          onClick={toggleMenu}
+          aria-expanded={menuOpen}
+          aria-label="Toggle menu"
+        >
           <i className={`fas fa-${menuOpen ? 'times' : 'bars'}`}></i>
         </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white bg-opacity-90 text-black p-4 rounded font-roboto mt-2 shadow-lg transition-transform transform duration-300 ease-in-out">
+        <div
+          ref={menuRef}
+          className="md:hidden bg-white bg-opacity-90 text-black p-4 rounded font-roboto mt-2 shadow-lg transition-transform transform duration-300 ease-in-out"
+        >
           <ul className="flex flex-col space-y-2">
-            <li><Link href="/about" className="transition-colors hover:text-blue-600" onClick={closeMenu}>About</Link></li>
-            <li><Link href="/services" className="transition-colors hover:text-blue-600" onClick={closeMenu}>Services</Link></li>
-            <li><Link href="/portfolio" className="transition-colors hover:text-blue-600" onClick={closeMenu}>Portfolio</Link></li>
-            <li><Link href="/blog" className="transition-colors hover:text-blue-600" onClick={closeMenu}>Blog</Link></li>
-            <li><Link href="/contact" className="transition-colors hover:text-blue-600" onClick={closeMenu}>Contact</Link></li>
+            {["about", "services", "portfolio", "blog", "contact"].map((item) => (
+              <li key={item}>
+                <Link href={`/${item}`} className="transition-colors hover:text-blue-600" onClick={closeMenu}>
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       )}
