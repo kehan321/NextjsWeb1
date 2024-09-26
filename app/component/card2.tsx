@@ -50,7 +50,7 @@ const EnergyProviderCard: React.FC<EnergyProviderCardProps> = ({ imageUrl, title
       </div>
       <div className="py-3 text-center text-base">
         <h1 className="font-bold">{title}</h1>
-        <p className="text-gray-400 text-sm">
+        <p className="text-gray-400 p-3 text-sm">
           {description || "No description available"} {/* Fallback for description */}
         </p>
       </div>

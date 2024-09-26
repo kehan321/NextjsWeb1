@@ -1,6 +1,7 @@
 // pages/blog.tsx
 import React from 'react';
 import AppBar from '../component/appar';
+import AppBar2 from '../component/appbar2';
 
 const Blog = () => {
   const posts = [
@@ -74,7 +75,7 @@ const Blog = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <AppBar/>
+      <AppBar2/>
       <h1 className="text-4xl font-bold text-center   pt-20 mb-6">Our Blog</h1>
       <div className="space-y-6">
         {posts.map((post, index) => (

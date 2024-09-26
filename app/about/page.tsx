@@ -1,11 +1,12 @@
 import React from 'react';
 import AppBar from '../component/appar';
+import AppBar2 from '../component/appbar2';
 
 const About = () => {
   return (
 
     <div className="max-w-6xl mx-auto font-serif p-6">
-      <AppBar/>
+      <AppBar2/>
       <h1 className="text-4xl mt-20 md:mt-0 font-bold text-center mb-8 text-gray-800">About Us</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">

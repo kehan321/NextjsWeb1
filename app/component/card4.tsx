@@ -46,7 +46,7 @@ interface Card4Props {
 
 const Card4: React.FC<Card4Props> = ({ imageUrl, title, subtitle }) => {
   return (
-    <div className="max-w-sm bg-white shadow-md overflow-hidden group">
+    <div className="max-w-sm w-full bg-white shadow-md overflow-hidden group mx-auto">
       <img 
         src={imageUrl} 
         alt={title} 
@@ -59,10 +59,10 @@ const Card4: React.FC<Card4Props> = ({ imageUrl, title, subtitle }) => {
           {subtitle || "No additional information available"} {/* Fallback for subtitle */}
         </p>
       </div>
-      <div className="text-right mt-4">
+      <div className="text-right my-4  ">
         <a 
           href="#" 
-          className="text-blue-500 py-2 hover:underline" 
+          className="text-blue-500 py-2  px-4 hover:underline" 
           target="_blank" 
           rel="noopener noreferrer"
         >

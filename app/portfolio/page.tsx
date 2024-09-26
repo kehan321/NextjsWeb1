@@ -1,6 +1,7 @@
 // pages/portfolio.tsx
 import React from 'react';
 import AppBar from '../component/appar';
+import AppBar2 from '../component/appbar2';
 
 const Portfolio = () => {
   const projects = [
@@ -68,16 +69,16 @@ const Portfolio = () => {
 
   return (
     <div className="container mx-auto p-6">
-        <AppBar/>
-      <h1 className="text-4xl font-bold text-center  pt-20 mb-6">Our Portfolio</h1>
+        <AppBar2/>
+      <h1 className="text-4xl font-bold text-center text-black  pt-20 mb-6">Our Portfolio</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105">
             <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-              <p>{project.description}</p>
-              <a href={project.link} className="text-blue-500 hover:underline mt-2 block">View Project</a>
+              <h2 className="text-xl font-semibold  text-black mb-2">{project.title}</h2>
+              <p className='text-gray-500'>{project.description}</p>
+              <a href={project.link} className="text-blue-500  hover:underline mt-2 block">View Project</a>
             </div>
           </div>
         ))}

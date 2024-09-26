@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../component/supabaseClient';
 import AppBar from '../component/appar';
+import AppBar2 from '../component/appbar2';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -47,16 +48,16 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto font-serif p-6">
-      <AppBar />
+    <div className="max-w-6xl  text-black mx-auto font-serif p-6">
+      <AppBar2 />
       <h1 className="text-4xl pt-20  font-bold text-center   md:mt-0 mb-8 text-gray-800">Get in Touch</h1>
 
       {/* Feedback Form */}
-      <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
-        <h2 className="text-2xl font-semibold mb-6">We&apos;d Love Your Feedback</h2>
+      <div className="bg-white text-black shadow-lg rounded-lg p-8 mb-8">
+        <h2 className="text-2xl text-black font-semibold mb-6">We&apos;d Love Your Feedback</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          <div className="mb-4 text-black">
             <label className="block text-sm font-medium mb-2" htmlFor="name">Your Name</label>
             <input
               type="text"
@@ -70,7 +71,7 @@ const Contact = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2" htmlFor="email">Your Email</label>
+            <label className="block text-sm text- font-medium mb-2" htmlFor="email">Your Email</label>
             <input
               type="email"
               id="email"
