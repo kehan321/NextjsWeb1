@@ -1,6 +1,5 @@
 // pages/blog.tsx
 import React from 'react';
-import AppBar from '../component/appar';
 import AppBar2 from '../component/appbar2';
 
 const Blog = () => {

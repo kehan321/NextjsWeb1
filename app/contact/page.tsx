@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../component/supabaseClient';
-import AppBar from '../component/appar';
 import AppBar2 from '../component/appbar2';
 
 const Contact = () => {
