@@ -4,7 +4,7 @@ import AppBar2 from '../component/appbar2';
 const About = () => {
   return (
 
-    <div className="max-w-6xl mx-auto font-serif p-6">
+    <div className="max-w-6xl mx-auto text-black font-serif p-6">
       <AppBar2/>
       <h1 className="text-4xl mt-20 md:mt-0 font-bold text-center mb-8 text-gray-800">About Us</h1>
       

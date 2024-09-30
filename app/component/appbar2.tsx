@@ -87,7 +87,7 @@ const AppBar2: React.FC = () => {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="md:hidden bg-white bg-opacity-60 text-black p-4 rounded font-roboto mt-2 shadow-lg transition-transform transform duration-300 ease-in-out"
+          className="md:hidden bg-white  text-black p-4 rounded font-roboto w-36  ms-64 me-5  shadow-lg transition-transform transform duration-300 ease-in-out"
         >
           <ul className="flex flex-col space-y-2">
             {["about", "services", "portfolio", "blog", "contact"].map((item) => (

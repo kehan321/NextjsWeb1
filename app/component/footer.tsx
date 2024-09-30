@@ -4,7 +4,7 @@ import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 relative overflow-hidden" style={{ backgroundImage: "url('https://tse4.mm.bing.net/th?id=OIP.H1x3sxaZW5F3l9WRCrxZkwHaE3&pid=Api&P=0&h=220')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <footer className="bg-gray-800 text-white py-8 relative overflow-hidden" style={{ backgroundImage: "url('", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center mb-6">
           <p className="text-center text-sm mb-4">
